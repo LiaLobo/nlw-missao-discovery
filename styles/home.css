@@ -1,0 +1,63 @@
+.content {
+  display: grid;
+
+  /* Determina o tamanho de cada coluna. Podem ser criadas quantas colunas quiser, mas o total das porcentagens deve ser igual a 100%. */
+  grid-template-columns: 60% 40%;
+
+  /* Primeiro valor é o tamanho da linha do header. 1fr está pegando o restante da tela (100% - 11.4rem) e
+    deixando em um bloco só para pegar todo o restante do height. Assim garantimos que as linhas vão ocupar toda a altura.
+  */
+  grid-template-rows: 11.4rem 1fr;
+
+  /* Pega cada quadrante que temos pelas definições feitas anteriormente e diz
+    quem vai ocupar cada area dessa.
+  */
+  grid-template-areas: 
+    'header header'
+    'left right';
+}
+
+header {
+  grid-area: header;
+}
+
+#bg {
+  grid-area: left;
+
+  background: url(../assets/Ilustração.svg) no-repeat top/contain;
+
+}
+
+main {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  /* Essa propriedade min irá sempre priorizar o valor mínimo. Caso em algum tamanho de tela o tamanho do container ultrapassar 36.3rem,
+    a propriedade vai usar 100% como o valor da width.
+  */
+  width: min(36.3rem, 100%);
+}
+
+.title-form {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px, 5vw, 2.8rem);
+  margin-bottom: 2.4rem;
+}
+
+.room-code__input {
+  border: 0.2rem solid var(--grey-blue);
+  padding: 0 1.6rem;
+  margin-bottom: 1.8rem;
+}
+
+.room-code__input, .button-enter {
+  width: 100%;
+}
+
+.button-enter {
+  margin-bottom: 4rem;
+}
