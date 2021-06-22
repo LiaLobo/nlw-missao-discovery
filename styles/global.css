@@ -35,6 +35,7 @@ html {
 
 body {
   height: 100vh;
+  display: flex;
   background-color: var(--background);
   font-family: 'Open Sans', sans-serif;
 }
