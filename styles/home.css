@@ -56,7 +56,7 @@ main {
   margin-bottom: 1.8rem;
 }
 
-.room-code__input, .button-enter {
+.room-code__input, button {
   width: 100%;
 }
 
