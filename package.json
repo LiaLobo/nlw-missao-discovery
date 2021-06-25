@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/LiaLobo/nlw-missao-discovery/issues"
   },
-  "homepage": "https://github.com/LiaLobo/nlw-missao-discovery#readme"
+  "homepage": "https://github.com/LiaLobo/nlw-missao-discovery#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }
