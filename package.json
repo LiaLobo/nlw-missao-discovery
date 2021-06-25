@@ -1,0 +1,20 @@
+{
+  "name": "rocketQ",
+  "version": "1.0.0",
+  "description": "Projeto para criar perguntas anônimas de usuários, direcionadas ao dono da página. Desenvolvido durante a Next Level Week na missão Discover",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiaLobo/nlw-missao-discovery.git"
+  },
+  "keywords": [],
+  "author": "Lia Freitas Lobo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiaLobo/nlw-missao-discovery/issues"
+  },
+  "homepage": "https://github.com/LiaLobo/nlw-missao-discovery#readme"
+}
