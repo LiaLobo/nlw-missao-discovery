@@ -1,15 +1,18 @@
 // Arquivo responsável por iniciar o servidor para o projeto conseguir rodar.
 
 const express = require('express')
-// Importação do arquivo de rotas que foi criado.
+// Importando o arquivo de rotas que foi criado.
 const route = require('./route')
-// Importação do módulo 'path'.
+// Importando o módulo 'path'.
 const path = require('path')
 
 const server = express()
 
 // Setando para o node entender que o aplicativo vai ter como mecanismo de visualização de telas o ejs.
 server.set('view engine', 'ejs')
+
+// Comando dizendo para usar o conteúdo estático que está dentro da pasta public.
+server.use(express.static('public'))
 
 // Setando o caminnho onde vai ser econtrada a pasta com as views (telas).
 // O primeiro parâmetro é o nome da pasta criada no projeto. O segundo parâmetro é uma construção do caminho, ou seja,
