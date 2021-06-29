@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  --black: #0D114F;
+  --white: #FAFAFA;
+  --red: #E83F5B;
+  --light-blue: #E0ECFF;
+  --blue: #3485FF;
+  --background: #F6FAFF;
+  --overlay: #040911;
+  --icons-details: #A5B0C1;
+
+  --grey-dark: #4D5E77;
+  --grey-blue: #A1B2CD;
+  --grey-light:#E5EAF1;
+  --grey-medium: #eaecf1;
+
+  /*
+    O padrão de tamanho de fonte no navegador (User Agent) é 16px que equivale a 1rem.
+    REM = unidade de medida que adpatará o tamanho da fonte, facilitando a resposividade.
+    Mudando o padrão inicial das fontes para a base 10 temos mais facilidade para converter os tamanhos
+    que estão no figma em pixels para rem.
+  */
+
+  /* 1rem = 16px = 100% do font-size. 62.5% é o valor de 10px 
+    Ou seja, o padrão do site para o navegador agora é de 10px, assim fica mais fácil para converter o valor para a unidade rem.
+  */
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: var(--background);
+}
+
+body, button, input, textarea {
+  /* Com o clamp conseguimos setar três valores para o atributo:
+      - o primeiro é o valor mínimo  que o atributo pode ter;
+      - o segundo é o valor padrão que ele vai ter em telas regulares;
+      - o terceiro é o valor máximo que pode ter para telas muito grandes.
+  */
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content header {
+  width: 80%;
+  margin: 3.5rem auto;
+}
+
+.content header img{
+  width: 16.7rem;
+}
+
+.room-code__input, .button {
+  height: 5rem;
+  border-radius: 0.8rem;
+}
+
+/* Faz com que as labels que tenham essa classe continuem existindo, mas elas não irão interferir no layout da tela */
+.sr-only{
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  /* clip-path: rect(0, 0, 0, 0); */
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 0;
+  background-color: var(--blue);
+  cursor: pointer;
+
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  /* Cria um filtro de brilho para ser colocado no botão */
+  filter: brightness(1.2);
+}
+
+.button > img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.outlined {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 0.2rem solid var(--blue);
+}
+
+button.red,
+.button.red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+button.grey,
+.button.grey {
+  background-color: var(--grey-light);
+  color: var(--grey-dark);
+}

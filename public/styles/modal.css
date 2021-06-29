@@ -1,0 +1,59 @@
+.modal-wrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  /* Nesse caso o top e left 0 não permitem que aconteça alguma distorção nessa div e cause um scroll desnecessário, pois mantém o alinhamento fixo nessa posição */
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 9, 17, 0.8);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-wrapper .modal {
+  width: min(59rem, 90%);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 0.8rem;
+  padding: 6.4rem;
+  margin: auto;
+}
+
+.modal-wrapper .modal h2 {
+  font-size: 2.4rem;
+  color: var(--black);
+}
+
+.modal-wrapper .modal p {
+  color: var(--grey-dark);
+  margin-bottom: 2.4rem;
+}
+
+.modal-wrapper .modal input {
+  width: 30.2rem;
+  border: 0.2rem solid var(--blue);
+  border-radius: 0.8rem;
+  padding: 1.3rem 1.6rem;
+  margin-bottom: 4rem;
+}
+
+.modal-wrapper .modal .modal-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-wrapper .modal .modal-buttons .button:nth-child(1) {
+  margin-right: 0.8rem;
+}
+
+.modal-wrapper .modal .modal-buttons > .button {
+  padding: 1.3rem 3.2rem;
+}
