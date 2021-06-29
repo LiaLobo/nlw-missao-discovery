@@ -7,6 +7,8 @@ const route = express.Router()
 // Então aqui vai ser definido o que vai ser a resposta do servidor quando for feita uma requisição.
 // Nesse caso a respota será renderizar o arquivo index, que estará com o conteúdo da home nele.
 route.get('/', (req, res) => res.render('index'))
+route.get('/room', (req, res) => res.render('room'))
+route.get('/create-pass', (req, res) => res.render('create-pass'))
 
 // Exportando o arquivo route
 module.exports = route
