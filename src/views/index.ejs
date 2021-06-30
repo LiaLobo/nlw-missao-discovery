@@ -7,8 +7,8 @@
     <!-- meta tag de compatibilidade com o internet explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Criar Sala - Rocket.Q</title>
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/home.css">
 
     <!-- Esse primeiro link faz com que a fonte seja carregada em primeiro lugar. Como um pré loading -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,7 +17,9 @@
   <body>
     <div class="content">
       <header>
-        <img src="./images/Logo.svg" alt="Logo Rocket.Q">
+        <a href="/">
+          <img src="/images/Logo.svg" alt="Logo Rocket.Q">
+        </a>
       </header>
 
       <div id="bg">
@@ -27,31 +29,10 @@
 
       <main>
         <div id="home" class="container">
-          <section>
-            <h2 class="title-form">Entre como participante</h2>
-            <form action="">
-              <label class="sr-only" for="room-id">Código da sala</label>
-              <input id="room-id" class="room-code__input" type="number" placeholder="Código da sala">
-              <button class="button">
-                <img src="./images/enter-room.svg" alt="Entrar na sala">
-                Entrar na sala
-              </button>
-            </form>
-          </section>
 
-          <div class="separator">
-            <span></span>
-            <span>ou</span>
-            <span></span>
-          </div>
+          <!-- Renderização do conteúdo principal de acordo com a url -->
 
-          <section>
-            <h3 class="title-form">Crie sua própria sala, de forma fácil</h3>
-            <a class="button outlined" href="create-pass.html">
-              <img src="./images/users.svg" alt="Criar sala">
-              Criar Sala
-            </a>
-          </section>
+          <%- include(`parts/${page}`) %>
         </div>
       </main>
     </div>
