@@ -21,6 +21,9 @@ server.use(express.static('public'))
 // das views, e o join junta todas essas informações.
 server.set('views', path.join(__dirname, 'views'))
 
+// Middleware. Vai permitir a decodificação da rota para poder pegar os parâmetros através dela.
+server.use(express.urlencoded({extended: true}))
+
 // Usando o arquivo de rotas no node. Agora ele consegue reconhecer as rotas do projeto.
 server.use(route)
 

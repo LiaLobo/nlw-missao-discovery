@@ -14,7 +14,7 @@ const handleActionsQuestionsClick = (event, check = true) => {
   const questionId = event.target.dataset.id
   const actionForm = check ? 'check' : 'delete'
 
-  modalForm.setAttribute('action', `/room/${roomId}/${questionId}/${actionForm}`)
+  modalForm.setAttribute('action', `/question/${roomId}/${questionId}/${actionForm}`)
 
   modalTitle.textContent = check ? 'Marcar pergunta como lida' : 'Excluir pergunta'
   modalDescription.textContent = `Tem certeza que você deseja ${check ? 'marcar a pergunta como lida' : 'excluir esta pergunta?'}?`
