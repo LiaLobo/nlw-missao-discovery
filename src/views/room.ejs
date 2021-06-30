@@ -23,8 +23,8 @@
         </a>
 
         <div class="header-buttons">
-          <button class="button outlined" id="room-id" data-id="323243">
-            #323243
+          <button class="button outlined" id="room-id" data-id="<%= roomId %>">
+            #<%= roomId %>
             <img src="/images/copy.svg" alt="Copiar código da sala">
 
           </button>
@@ -40,7 +40,7 @@
         <section id="question-form">
           <h1>Faça sua pergunta</h1>
 
-          <form action="">
+          <form action="/question/create/<%= roomId %>" method="POST">
             <label class="sr-only" for="question">O que você quer perguntar?</label>
             <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
 
@@ -57,89 +57,52 @@
         <section id="questions">
           <h2 class="sr-only">Perguntas da comunidade</h2>
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <span class="user">
-                <img src="/images/user.svg" alt="Avatar do usuário">
-              </span>
-              <p class="question">
-                O que é JavaScript?
-              </p>
+          <% questions.map(item => { %>
+            <div class="question-wrapper">
+              <div class="question-content">
+                <span class="user">
+                  <img src="/images/user.svg" alt="Avatar do usuário">
+                </span>
+                <p class="question">
+                  <%= item.question %>
+                </p>
+              </div>
+              <div class="actions">
+                <a href="#" class="check" data-id="2">
+                  <img src="/images/check.svg" alt="Marcar como lida">
+                  Marcar como lida
+                </a>
+                <a href="#" class="delete" data-id="2">
+                  <img src="/images/trash.svg" alt="Excluir">
+                  Excluir
+                </a>
+              </div>
             </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="2">
-                <img src="/images/check.svg" alt="Marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="2">
-                <img src="/images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
+          <% }) %>
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <span class="user">
-                <img src="/images/user.svg" alt="Avatar do usuário">
-              </span>
-              <p class="question">
-                O que é typescript?
-              </p>
+          <% questionsReaded.map(item => { %>
+            <div class="question-wrapper readed">
+              <div class="question-content">
+                <span class="user">
+                  <img src="/images/user.svg" alt="Avatar do usuário">
+                </span>
+                <p class="question">
+                  <%= item.question %>
+                </p>
+              </div>
+              <div class="actions">
+                <a href="#" class="check" data-id="1">
+                  <img src="/images/check.svg" alt="Marcar como lida">
+                  Pergunta lida
+                </a>
+                <!-- <a href="#" class="delete">
+                  <img src="/images/trash.svg" alt="Excluir">
+                  Excluir
+                </a> -->
+              </div>
             </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="3">
-                <img src="/images/check.svg" alt="Marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="3">
-                <img src="/images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
+          <% }) %>
 
-          <div class="question-wrapper">
-            <div class="question-content">
-              <span class="user">
-                <img src="/images/user.svg" alt="Avatar do usuário">
-              </span>
-              <p class="question">
-                Você ja sabe quais as bases você precisa melhorar para alcançar o seu próximo nível com maestria? Definiu o seu foco e objetivo para seguir em frente? Estou curiosa e embasbacada com sua perseverança por ter alcançado a terceira aula e sei que vai continuar ate o fim, então responde ai pra gente!!
-              </p>
-            </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="4">
-                <img src="/images/check.svg" alt="Marcar como lida">
-                Marcar como lida
-              </a>
-              <a href="#" class="delete" data-id="4">
-                <img src="/images/trash.svg" alt="Excluir">
-                Excluir
-              </a>
-            </div>
-          </div>
-
-          <div class="question-wrapper readed">
-            <div class="question-content">
-              <span class="user">
-                <img src="/images/user.svg" alt="Avatar do usuário">
-              </span>
-              <p class="question">
-                Qual a diferença entre const, var e let no Javascript?
-              </p>
-            </div>
-            <div class="actions">
-              <a href="#" class="check" data-id="1">
-                <img src="/images/check.svg" alt="Marcar como lida">
-                Pergunta lida
-              </a>
-              <!-- <a href="#" class="delete">
-                <img src="/images/trash.svg" alt="Excluir">
-                Excluir
-              </a> -->
-            </div>
-          </div>
         </section>
       </main>
     </div>
