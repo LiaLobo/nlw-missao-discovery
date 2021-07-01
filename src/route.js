@@ -14,6 +14,7 @@ route.get('/', (req, res) => res.render('index', {page: 'enter-room'}))
 // É possível passar uma variável que nesse caso irá renderizar a parte que do conteúdo que for de acordo com a url.
 route.get('/create-pass', (req, res) => res.render('index', {page: 'create-pass'}))
 route.get('/room/:roomId', RoomController.open)
+route.post('/enterroom', RoomController.enter)
 
 route.post('/create-room', RoomController.create)
 
