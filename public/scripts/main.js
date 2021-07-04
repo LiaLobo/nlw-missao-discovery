@@ -44,3 +44,29 @@ const modalCancelButton = document.querySelector('.button.cancel')
 modalCancelButton.addEventListener('click', () => {
   doubleCheckModal.close()
 })
+
+const copyButton = document.getElementById('room-id-copy')
+
+const copy = () => {
+
+  const texToToCopy = copyButton.innerText.split('#')[1] 
+
+  const tempInput = document.createElement('INPUT')
+  tempInput.value = texToToCopy
+  document.body.appendChild(tempInput)
+  tempInput.select()
+  document.execCommand('copy')
+  tempInput.remove()
+
+  const tooltipSpan = document.createElement('SPAN')
+  tooltipSpan.textContent = 'Número da sala copiado'
+  tooltipSpan.classList.add('copy-tooltip__text')
+  copyButton.appendChild(tooltipSpan)
+
+  setTimeout(() => {
+    tooltipSpan.remove()
+  }, 3000)
+
+}
+
+copyButton.addEventListener('click', copy)

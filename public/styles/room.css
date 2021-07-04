@@ -171,3 +171,26 @@
   color: var(--grey-dark);
   line-height: 1.9rem;
 }
+
+.copy {
+  position: relative;
+}
+
+.copy-tooltip__text {
+  content: "";
+  width: max-content;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+  background-color: var(--grey-dark);
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  top: 120%;
+  left: -20%;
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
